@@ -3,8 +3,6 @@
 A virtual stock trading full stack web application built with Python using Flask, Jinja templating, PostgreSQL Database and HTML, CSS & Bootstrap, deployed to Heroku. 
 Stock prices are tracked real-time from IEX API.
 
-Check out the app running on Heroku here: https://finance-market.herokuapp.com/
-
 Functionalities:
 - Keep track of stock's portfolio value over time
 - Log in/Register: Create and log in to an account
