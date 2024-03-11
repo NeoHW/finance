@@ -1,23 +1,48 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    Register
-{% endblock %}
-
-{% block main %}
-    <form action="/register" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
-        </div>
-            <p> Password should contain at least 8 characters, a mix of letters and numbers, a mix of lowercase and uppercase letters, and a special character </p>
-        <div>
-        </div>
-        <div class="mb-3">
-            <input autocomplete="off" class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Retype Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Register</button>
-    </form>
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+main %}
+<form action="/register" method="post" class="registration-form">
+  <div class="form-group mb-3">
+    <label for="username">Username:</label>
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Username"
+      type="text"
+      required
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="password">Password:</label>
+    <p class="password-rules">
+      Password should contain at least 8 characters, including a mix of letters
+      and numbers, both lowercase and uppercase letters, and a special
+      character.
+    </p>
+    <input
+      autocomplete="off"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+      required
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="confirmation">Retype Password:</label>
+    <input
+      class="form-control"
+      id="confirmation"
+      name="confirmation"
+      placeholder="Retype Password"
+      type="password"
+      required
+    />
+  </div>
+  <button class="btn btn-primary" type="submit">Register</button>
+</form>
 {% endblock %}
